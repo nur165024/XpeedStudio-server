@@ -7,7 +7,8 @@ const User = new mongoose.model("User", userSchema);
 // get all user
 router.get("/", async (req, res) => {
   await User.find({})
-    .limit(2)
+    .limit(req.query.limit)
+    .sort({ date: -1 })
     .exec((err, data) => {
       if (err) {
         res.status(500).json({
