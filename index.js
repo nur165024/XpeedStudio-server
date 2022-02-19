@@ -25,9 +25,9 @@ app.get("/", (req, res) => {
 });
 
 // user router
-app.use("/user", userHandler);
+app.use("/api/user", userHandler);
 // image upload
-app.use("/image/upload", imageHandler);
+app.use("/api/image/upload", imageHandler);
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Listen port 5000");
