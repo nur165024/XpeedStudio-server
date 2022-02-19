@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const userHandler = require("./routerHandler/userHandler");
 const imageHandler = require("./routerHandler/imageHandler");
 const cors = require("cors");
+require("dotenv").config();
 
 // express initialization
 const app = express();
@@ -28,6 +29,6 @@ app.use("/user", userHandler);
 // image upload
 app.use("/image/upload", imageHandler);
 
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log("Listen port 5000");
 });
