@@ -12,7 +12,9 @@ app.use(cors());
 
 // database connection with mongodb
 mongoose
-  .connect("mongodb://localhost/users")
+  .connect(
+    "mongodb+srv://nur42658:nuraalam1234@cluster0.vihvh.mongodb.net/XpeedStudio?retryWrites=true&w=majority"
+  )
   .then(() => console.log("connection successfully!"))
   .catch((err) => console.log(err));
 
